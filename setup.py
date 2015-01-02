@@ -15,7 +15,7 @@ def read(file):
 setup(
     name=NAME,
     version=read('VERSION'),
-    description='Automatically package those singleton modules that keep getting lost. Other organziational benifits.',
+    description='Automatically package those singleton modules that keep getting lost. Other organizational benefits.',
     long_description=read('README.rst'),
     author='Mike Burr',
     author_email='mburr@unintuitive.org',
