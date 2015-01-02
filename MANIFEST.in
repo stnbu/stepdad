@@ -1,1 +1,3 @@
 recursive-include stepdad/data *
+include VERSION
+include README.rst
