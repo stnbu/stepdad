@@ -6,9 +6,9 @@ import sys
 
 def main():
     parser = OptionParser(
-            usage="usage: %prog [options] SCRIPT-TO-RUN [SCRIPT-ARGUMENTS]")
+            usage="usage: %prog [options] full_path_to_module")
 
-    parser.add_option("-o", "--output-dir", dest='root_path', action="store", type="str", default="", help="Put output files in this directory")
+    parser.add_option("-o", "--output-dir", dest='root_path', action="store", type="str", default="", help="Put output files in this directory (required)")
     parser.add_option("-g", "--guess", dest='guess', default=True, action="store_true", help="Try to make some guesses about setup() args.")
     parser.add_option("-i", "--interactive", dest='interactive', default=True, action="store_true", help="Interactive. Let the user edit the generaged setup() kwargs.")
     parser.add_option("-p", "--import", dest='import_analysis', default=True, action="store_true", help="Try to analyize the module by importing it.")
@@ -19,12 +19,12 @@ def main():
     try:
         module_path, = args
     except ValueError:
-        ## explain the problem
+        print >>sys.stderr, 'You must specify exactly one module path as the last argument.'
         parser.print_help()
         sys.exit(1)
 
     if not options.root_path:
-        ## explain the problem
+        print >>sys.stderr, 'Output directory (aka root_path) is a required argument.'
         parser.print_help()
         sys.exit(1)
 

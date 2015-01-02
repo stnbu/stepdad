@@ -15,7 +15,7 @@ def read(file):
 setup(
     name=NAME,
     version=read('VERSION'),
-    description='automatically package those singleton modules that keep keeting lost. Other organziational benifits.',
+    description='Automatically package those singleton modules that keep getting lost. Other organziational benifits.',
     long_description=read('README.rst'),
     author='Mike Burr',
     author_email='mburr@unintuitive.org',
@@ -24,15 +24,19 @@ setup(
     provides=[NAME],
     license='MIT',
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 2',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: System :: Installation/Setup',
+        'Topic :: System :: Systems Administration',
         'Topic :: Utilities',
+
     ],
+    test_suite='test',
     packages=[NAME],
-    keywords=['introspection', 'debugging'],
-    test_suite='nose.collector',
+    keywords=['pip', 'package managementt',],
     entry_points={
         'console_scripts': [ '{0} = {0}.run:main'.format(NAME),],
     },
