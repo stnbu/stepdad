@@ -43,7 +43,7 @@ def get_wellknown_url_data(text):
                 url_data.update(match.groupdict())
     return url_data
 
-UTIL_NAME = 'dumbmodule'
+UTIL_NAME = 'stepdat'
 UTIL_URL = 'https://github.com/stnbu/{0}'.format(UTIL_NAME)
 THIS_DIR = os.path.dirname(__file__)
 THIS_DIR = os.path.abspath(THIS_DIR)
