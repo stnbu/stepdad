@@ -1,0 +1,17 @@
+# -*- Mode: python; coding: utf-8 -*- vim: ft=python
+
+INSTALL_REQUIRES = []
+ZIP_SAFE_CAPABLE = True
+
+import sys
+try:
+    from setuptools import setup
+    ZIP_SAFE_CAPABLE = False
+    if sys.version_info < (2, 6):
+        INSTALL_REQUIRES.append('multiprocessing')
+except ImportError:
+    from distutils.core import setup
+
+kwargs = {kwargs}
+
+setup(**kwargs)
